@@ -1,0 +1,11 @@
+services:
+  relay:
+    build: .
+    restart: always
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: "4000"
+      MIN_TOKEN_LENGTH: "32"
+    # En production sur EasyPanel, les variables sensibles sont injectées
+    # via l'interface EasyPanel — ne pas mettre de secrets ici.

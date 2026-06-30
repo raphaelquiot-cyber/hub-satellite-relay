@@ -9,7 +9,7 @@
  * Générer avec : node -e "console.log(require('crypto').randomBytes(24).toString('hex'))"
  */
 export class TokenValidator {
-  private static readonly MIN_LENGTH = 32
+  private static readonly MIN_LENGTH = parseInt(process.env['MIN_TOKEN_LENGTH'] ?? '32', 10)
 
   isValid(token: string): boolean {
     if (token.length < TokenValidator.MIN_LENGTH) return false
