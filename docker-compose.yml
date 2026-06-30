@@ -7,5 +7,7 @@ services:
     environment:
       PORT: "4000"
       MIN_TOKEN_LENGTH: "32"
-    # En production sur EasyPanel, les variables sensibles sont injectées
-    # via l'interface EasyPanel — ne pas mettre de secrets ici.
+    # En production sur EasyPanel :
+    # - Régler "App Port" à 4000 dans les settings du projet
+    #   (EasyPanel injecte PORT=<App Port> au runtime)
+    # - Les ports: ci-dessus s'appliquent uniquement à docker compose local
